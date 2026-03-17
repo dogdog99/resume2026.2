@@ -1,4 +1,4 @@
-name: Build Resume
+name: Build and Commit Resume
 
 on:
   push:
@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          # 必須拉取完整的 git 歷史紀錄才能推回 main
+          fetch-depth: 0
 
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
@@ -20,15 +23,19 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y imagemagick
-          # 修正 ImageMagick 的安全性權限以允許轉換 PDF
           sudo sed -i 's/domain="coder" rights="none" pattern="PDF"/domain="coder" rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
-          convert -density 300 resume.pdf -quality 90 resume.png
+          # 加入 -flatten 確保白底，並轉為 PNG
+          convert -density 300 -flatten resume.pdf[0] -quality 90 resume.png
 
-      - name: Deploy to Output Branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: artifacts # 將編譯好的檔案存在此分支
-          keep_files: false
-          destination_dir: ./
+      - name: Commit and Push to Main
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add resume.pdf resume.png
+          # 檢查是否有變更，避免無意義的提交
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update resume PDF and PNG [skip ci]"
+            git push origin main
+          fi
