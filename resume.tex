@@ -2,13 +2,12 @@
 % Resume in Latex
 %------------------------
 \documentclass[letterpaper,11pt]{article}
-\usepackage{xcolor}
-\pagecolor{white}
+
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames,dvipsnames]{xcolor} % 建議統一使用 xcolor 並帶入顏色參數
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -17,6 +16,7 @@
 \usepackage{tabularx}
 \input{glyphtounicode}
 
+% 分頁與標題樣式設定
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot{}
@@ -38,6 +38,7 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
+% 修正 Unicode 設定
 \pdfgentounicode=1
 
 %-------------------------
@@ -63,6 +64,8 @@
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+% 重要：將 pagecolor 放在這裡，解決編譯錯誤與黑底問題
+\pagecolor{white}
 
 %----------HEADING----------
 \begin{center}
