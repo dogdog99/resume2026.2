@@ -1,0 +1,34 @@
+name: Build Resume
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+
+      - name: Convert PDF to PNG
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          # 修正 ImageMagick 的安全性權限以允許轉換 PDF
+          sudo sed -i 's/domain="coder" rights="none" pattern="PDF"/domain="coder" rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
+          convert -density 300 resume.pdf -quality 90 resume.png
+
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: artifacts # 將編譯好的檔案存在此分支
+          keep_files: false
+          destination_dir: ./
