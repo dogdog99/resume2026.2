@@ -1,0 +1,150 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+\item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+\textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Chung-Chin Huang} \\ \vspace{4pt}
+    +886-984-301-459 $|$ 
+    \href{mailto:99godgod@gmail.com}{\underline{99godgod@gmail.com}} $|$ 
+    \href{https://github.com/dogdog99}{\underline{github.com/dogdog99}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National Cheng Kung University}{Tainan, Taiwan}
+      {M.S. in Applied Mathematics}{2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Specializing in \textbf{Scientific Computing} and \textbf{Numerical Methods for PDEs}.}
+        \resumeItem{Researching computational mathematics, including \textbf{Finite Difference (FDM)} and \textbf{Finite Element Methods (FEM)}.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {National Yang Ming Chiao Tung University}{Hsinchu, Taiwan}
+      {Studies in Mathematics}{2022 -- 2025}
+      \resumeItemListStart
+        \resumeItem{Advanced coursework in Mathematical Analysis, Probability Theory, and Linear Algebra.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {National Taiwan University}{Taipei, Taiwan}
+      {B.S. in Environmental Engineering}{2019 -- 2021}
+      \resumeItemListStart
+        \resumeItem{Foundational CS coursework: Data Structures, Algorithms, and Operating Systems.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {National Yang Ming Chiao Tung University}{Mar 2024 -- Nov 2024}
+      {Web Developer / Administrative Assistant}{Hsinchu, Taiwan}
+      \resumeItemListStart
+        \resumeItem{Developed and optimized the front-end architecture for the Liberal Arts College website.}
+        \resumeItem{Ensured compliance with \textbf{ISO/IEC 27001} standards for information security management (ISMS).}
+        \resumeItem{Maintained system stability and performed regular security audits and updates.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {System Developer}{Sep 2021 -- Feb 2024}
+      {Independent Project (Linux/C)}{}
+      \resumeItemListStart
+        \resumeItem{Designed and deployed a high-performance cryptocurrency mining system on \textbf{Linux} servers.}
+        \resumeItem{Developed custom automation scripts in \textbf{C} for hardware monitoring and workload optimization.}
+        \resumeItem{Managed network configuration and performed real-time debugging for distributed systems.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {EYESCREAM / Yiqi International Co., Ltd.}{Jul 2019 -- Feb 2020}
+      {IT Assistant}{Taipei, Taiwan}
+      \resumeItemListStart
+        \resumeItem{Maintained ERP systems and internal NAS servers, ensuring 99.9\% uptime for business operations.}
+        \resumeItem{Configured enterprise networking equipment and resolved complex workstation issues.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Yuri Technology Co., Ltd.}{Mar 2025 -- Sep 2025}
+      {Production Operator}{Tainan, Taiwan}
+      \resumeItemListStart
+        \resumeItem{Managed semiconductor packaging workflows and strictly adhered to safety/SOP standards.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming}{: C, C++, Python, Shell Scripting} \\
+     \textbf{Mathematical Tools}{: Numerical Analysis, FDM, FEM, Probability, Statistics} \\
+     \textbf{Systems \& Web}{: Linux (Ubuntu/CentOS), Server Administration, Networking, HTML} \\
+     \textbf{Certifications}{: ISO/IEC 27001 ISMS Training}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
