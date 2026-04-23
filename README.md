@@ -8,4 +8,4 @@
 
 ---
 ### 授權
-本專案採用 [MIT License](./LICENSE) 授權。
+本專案採用 [MIT License](./LICENSE) 授權。 
